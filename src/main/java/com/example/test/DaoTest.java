@@ -103,8 +103,8 @@ public class DaoTest {
         Date date = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String format = simpleDateFormat.format(date);
-        int i = coalMineDao.add(connection,new CoalMine(1,new Timestamp(date.getTime()),"煤流",23,22));
+        final CoalMine coalMine = new CoalMine(1, new Timestamp(date.getTime()), "煤流", 23, 22);
+        coalMineDao.add(connection,coalMine);
         DruidUtils.close(connection,null,null);
-        System.out.println(i);
     }
 }

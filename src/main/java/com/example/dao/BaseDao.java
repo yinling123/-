@@ -25,11 +25,13 @@ public abstract class BaseDao{
         PreparedStatement preparedStatement = null;
         int k = 0;
         try {
+            System.out.println(1111);
             preparedStatement = connection.prepareStatement(sql);
             //填充占位符
             int len = objects.length;
             for (int i = 0; i < len; i++) {
                 preparedStatement.setObject(i + 1, objects[i]);
+                System.out.println(objects[i]);
             }
             //进行执行
             k = preparedStatement.executeUpdate();

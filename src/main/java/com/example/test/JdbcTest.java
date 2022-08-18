@@ -9,7 +9,7 @@ public class JdbcTest {
 
     @Test
     public void testConnection() throws Exception {
-        final Connection connection = DruidUtils.getConnection();
+        Connection connection = DruidUtils.getConnection();
         System.out.println(connection);
     }
 

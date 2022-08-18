@@ -5,8 +5,14 @@ import com.example.utils.Util;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.LinkedList;
+import java.util.List;
 
 public class EasyDl {
+
+    //存储合并的流总体
+    public static List<byte[]> list = new LinkedList<>();
+
 //    public static void main(String[] args) throws IOException {
 //        System.out.println(doPostFile("http://127.0.0.1:24401/","D:\\projectTest\\Jdbc\\src\\img\\037.jpg"));
 //        Util.refresh();
@@ -28,6 +34,9 @@ public class EasyDl {
             url_con.setDoOutput(true);
             url_con.setRequestProperty("Content-type", "application/x-java-serialized-object");
             Util.readFileByBytes(fileUrl,  url_con.getOutputStream());
+
+            list.add(((ByteArrayOutputStream)url_con.getOutputStream()).toByteArray());
+
             url_con.getOutputStream().flush();
             url_con.getOutputStream().close();
 
