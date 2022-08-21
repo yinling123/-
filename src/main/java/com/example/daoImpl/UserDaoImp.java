@@ -7,6 +7,10 @@ import com.example.pojo.User;
 import java.sql.Connection;
 import java.util.List;
 
+/**
+ * userDao类的实现类，用于完成对user表的基本数据操作
+ */
+
 public class UserDaoImp extends BaseDao implements UserDao {
 
     @Override

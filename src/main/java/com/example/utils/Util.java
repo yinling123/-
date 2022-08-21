@@ -74,14 +74,13 @@ public class Util {
      */
 
     public static void pic2MovByFfmpeg(String mp4SavePath,int width, int height) throws FFmpegFrameRecorder.Exception {
-        //视频宽高最好是按照常见的视频的宽高  16：9  或者 9：16
         FFmpegFrameRecorder recorder = new FFmpegFrameRecorder(mp4SavePath, width, height);
         //设置视频编码层模式
         recorder.setVideoCodec(avcodec.AV_CODEC_ID_H264);
         //设置声音大小
         recorder.setAudioChannels(2);
         //设置视频为1帧每秒
-        recorder.setFrameRate(1);
+        recorder.setFrameRate(10);
         //设置视频图像数据格式
         recorder.setPixelFormat(avutil.AV_PIX_FMT_YUV420P);
         recorder.setFormat("mp4");

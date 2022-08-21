@@ -53,7 +53,7 @@ public class ThreadPool {
                 }
                 //将识别的视频进行保存
                 try {
-                    Util.pic2MovByFfmpeg("D:\\CoalImage\\meiliutest.mp4",16,10);
+                    Util.pic2MovByFfmpeg("D:\\CoalImage\\meiliutest.mp4",700,500);
                 } catch (FFmpegFrameRecorder.Exception e) {
                     e.printStackTrace();
                 }

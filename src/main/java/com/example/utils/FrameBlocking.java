@@ -59,7 +59,7 @@ public class FrameBlocking {
                     e.printStackTrace();
                 }
                 //设置休眠时间
-                Thread.sleep(200);
+                Thread.sleep(300);
             }
         } catch (FrameGrabber.Exception | InterruptedException e) {
             e.printStackTrace();

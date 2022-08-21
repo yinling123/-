@@ -24,7 +24,7 @@ public class DruidUtils {
     static {
         Properties properties = new Properties();
         try {
-            properties.load(new FileInputStream("src\\main\\java\\com\\example\\utils\\druid.properties"));
+            properties.load(new FileInputStream("D:\\projectTest\\demo\\src\\main\\java\\com\\example\\utils\\druid.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
