@@ -1,13 +1,20 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>煤流检测注册页面</title>
-		<link type="text/css" rel="stylesheet" href="../../static/css/style.css" >
-		<script type="text/javascript" src="../../static/script/jquery-1.7.2.js"></script>
+		<base href="http://localhost:8080/demo_war_exploded/">
+		<link type="text/css" rel="stylesheet" href="static/css/style.css" >
+		<script type="text/javascript" src="static/script/jquery-1.7.2.js"></script>
 		<script type="text/javascript">
 			// 页面加载完成之后
 			$(function () {
+				//进行验证码点击切换功能
+				$("#code_img").click(function () {
+					var basepath = "http://localhost:8080/demo_war_exploded/";
+					this.src = "${basepath}kaptcha.jpg?d=" + new Date();
+				})
 				// 给注册绑定单击事件
 				$("#sub_btn").click(function () {
 					// 验证用户名：必须由字母，数字下划线组成，并且长度为5到12位
@@ -93,7 +100,7 @@
 	</head>
 	<body>
 		<div id="login_header">
-			<img class="logo_img" alt="" src="../../static/img/img.png" >
+			<img class="logo_img" alt="" src="static/img/logo.png" >
 		</div>
 
 			<div class="login_banner">
@@ -107,33 +114,42 @@
 						<div class="login_box">
 							<div class="tit">
 								<h1>用户注册</h1>
-								<span class="errorMsg"></span>
+								<span class="errorMsg">
+									${requestScope.msg}
+								</span>
 							</div>
 							<div class="form">
-								<form action="http://localhost:8080">
+								<form action="UserServlet" method="post">
+									<input type="hidden" name="action" value="register">
 									<label>用户名称：</label>
 									<input class="itxt" type="text" placeholder="请输入用户名"
-										   autocomplete="off" tabindex="1" name="username" id="username" />
+										   autocomplete="off" tabindex="1" name="username" id="username"
+											value="${requestScope.username}"/>
 									<br />
 									<br />
 									<label>用户密码：</label>
 									<input class="itxt" type="password" placeholder="请输入密码"
-										   autocomplete="off" tabindex="1" name="password" id="password" />
+										   autocomplete="off" tabindex="1" name="password" id="password"
+											value="${requestScope.password}"/>
 									<br />
 									<br />
 									<label>确认密码：</label>
 									<input class="itxt" type="password" placeholder="确认密码"
-										   autocomplete="off" tabindex="1" name="repwd" id="repwd" />
+										   autocomplete="off" tabindex="1" name="repwd" id="repwd"
+											value="${requestScope.repwd}"/>
 									<br />
 									<br />
 									<label>电子邮件：</label>
 									<input class="itxt" type="text" placeholder="请输入邮箱地址"
-										   autocomplete="off" tabindex="1" name="email" id="email" />
+										   autocomplete="off" tabindex="1" name="email" id="email"
+											value="${requestScope.email}"/>
 									<br />
 									<br />
 									<label>验证码：</label>
-									<input class="itxt" type="text" style="width: 150px;" id="code"/>
-									<img alt="" src="../../static/img/code.bmp" style="float: right; margin-right: 40px">
+									<input class="itxt" type="text" name="code" style="width: 80px;" id="code"
+										   value="${requestScope.code}"/>
+									<img id="code_img" alt="" src="kaptcha.jpg"
+										 style="float: right; margin-right: 40px; width: 110px; height: 30px;">
 									<br />
 									<br />
 									<input type="submit" value="注册" id="sub_btn" />

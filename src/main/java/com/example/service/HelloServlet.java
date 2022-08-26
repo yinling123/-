@@ -22,7 +22,7 @@ public class HelloServlet extends HttpServlet {
 //        out.println("<h1>" + message + "</h1>");
 //        out.println("</body></html>");
         try {
-            request.getRequestDispatcher("/page/user/login.html").forward(request,response);
+            request.getRequestDispatcher("/pages/user/login.jsp").forward(request,response);
         } catch (ServletException e) {
             e.printStackTrace();
         }

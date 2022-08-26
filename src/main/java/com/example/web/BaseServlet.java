@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.web;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
  * servlet程序的基本功能类
  */
 
-public abstract class BaseService extends HttpServlet {
+public abstract class BaseServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -226,6 +226,8 @@
     <orderEntry type="library" name="Maven: org.bytedeco:tesseract:windows-x86:4.1.1-1.5.5" level="project" />
     <orderEntry type="library" name="Maven: org.bytedeco:tesseract:windows-x86_64:4.1.1-1.5.5" level="project" />
     <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.1.1" level="project" />
-    <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.8.0" level="project" />
+    <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.7.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.penggle:kaptcha:2.3.2" level="project" />
+    <orderEntry type="library" name="Maven: com.jhlabs:filters:2.0.235-1" level="project" />
   </component>
 </module>

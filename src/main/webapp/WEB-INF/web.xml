@@ -11,4 +11,40 @@
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/HelloServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>com.example.web.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/UserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CoalServlet</servlet-name>
+        <servlet-class>com.example.web.CoalServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CoalServlet</servlet-name>
+        <url-pattern>/CoalServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>kaptchaServlet</servlet-name>
+        <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>kaptchaServlet</servlet-name>
+        <url-pattern>/kaptcha.jpg</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>UserFunctionServlet</servlet-name>
+        <servlet-class>com.example.web.UserFunctionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserFunctionServlet</servlet-name>
+        <url-pattern>/UserFunctionServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

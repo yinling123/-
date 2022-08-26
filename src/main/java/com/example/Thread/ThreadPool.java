@@ -7,7 +7,7 @@ import com.example.pojo.Analysis;
 import com.example.pojo.CoalMine;
 import com.example.utils.*;
 import org.bytedeco.javacv.FFmpegFrameRecorder;
-import org.bytedeco.javacv.FrameRecorder;
+import org.bytedeco.javacv.FrameGrabber;
 
 import java.sql.Connection;
 import java.util.concurrent.ExecutorService;
@@ -59,6 +59,7 @@ public class ThreadPool {
                 }
                 //运行完毕，关闭线程池
                 executorService.shutdown();
+                System.out.println("运行已经完成");
             }
 
         });
@@ -176,6 +177,20 @@ public class ThreadPool {
             public void run() {
                 FrameBlocking frameBlocking = new FrameBlocking();
                 frameBlocking.framing("D:\\CoalImage\\meiliu.mp4","coal","D:\\CoalImage");
+            }
+        });
+    }
+
+    //开启线程进行实时检测
+    public static void startDetect(){
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    RealDetect.detect();
+                } catch (FrameGrabber.Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

@@ -33,7 +33,7 @@ public interface UserDao {
      * @param user
      * @return
      */
-    public int updateUser(Connection connection,User user);
+    public int updateUserPassword(Connection connection,User user);
 
     /**
      * 查询用户数据，返回集合
@@ -42,6 +42,15 @@ public interface UserDao {
      * @return
      */
     public List<User> queryUsers(Connection connection,String username);
+
+
+    /**
+     * 查询用户数据，返回个人信息
+     * @param connection
+     * @param username
+     * @return
+     */
+    public User queryUser(Connection connection,String username);
 
 
 }

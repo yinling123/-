@@ -22,6 +22,7 @@ public class Analyzing {
         JSONObject parse = JSONObject.parseObject(s);
         System.out.println(parse);
         JSONArray results = (JSONArray) parse.get("results");
+        final Object cost_ms = parse.get("cost_ms");
 
         if(results.size() > 0){
             //先转化为数组，在进行求解
@@ -32,15 +33,18 @@ public class Analyzing {
             JSONObject location = (JSONObject) jsonObject.get("location");
             int length = (int) location.get("height");
             int width = (int) location.get("width");
+            int left = (int) location.get("left");
+            int top = (int) location.get("top");
+
 
             //创建对应数组
             Analysis analysis = null;
 
             //创建对应分析值
             if(label.equals("stone")){
-                analysis = new Analysis("矸石",length,width);
+                analysis = new Analysis("矸石",length,width,left,top);
             }else{
-                analysis = new Analysis("大煤矿",length,width);
+                analysis = new Analysis("大煤矿",length,width,left,top);
             }
 
             return analysis;

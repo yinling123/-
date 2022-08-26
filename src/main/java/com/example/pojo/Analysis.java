@@ -9,11 +9,31 @@ public class Analysis {
     private String type;
     private int length;
     private int width;
+    private int left;
+    private int top;
 
-    public Analysis(String type, int length, int width) {
+    public int getLeft() {
+        return left;
+    }
+
+    public void setLeft(int left) {
+        this.left = left;
+    }
+
+    public int getTop() {
+        return top;
+    }
+
+    public void setTop(int top) {
+        this.top = top;
+    }
+
+    public Analysis(String type, int length, int width, int left, int top) {
         this.type = type;
         this.length = length;
         this.width = width;
+        this.left = left;
+        this.top = top;
     }
 
     public String getType() {

@@ -51,7 +51,7 @@ public class DaoTest {
     public void testAdd(){
         Connection connection = DruidUtils.getConnection();
         UserDao userDao = new UserDaoImp();
-        if(userDao.addUer(connection,new User("1","2","用户","ds")) == 0){
+        if(userDao.addUer(connection,new User("1","2","ds")) == 0){
             System.out.println("注册失败");
         }else{
             System.out.println("注册成功");
@@ -71,17 +71,17 @@ public class DaoTest {
         DruidUtils.close(connection,null,null);
     }
 
-    @Test
-    public void testUpdate(){
-        final Connection connection = DruidUtils.getConnection();
-        UserDao userDao = new UserDaoImp();
-        if(userDao.updateUser(connection,new User("1","3","用户","dad")) == 0){
-            System.out.println("修改失败");
-        }else{
-            System.out.println("修改成功");
-        }
-        DruidUtils.close(connection,null,null);
-    }
+//    @Test
+//    public void testUpdate(){
+//        final Connection connection = DruidUtils.getConnection();
+//        UserDao userDao = new UserDaoImp();
+//        if(userDao.updateUser(connection,new User("1","3","dad")) == 0){
+//            System.out.println("修改失败");
+//        }else{
+//            System.out.println("修改成功");
+//        }
+//        DruidUtils.close(connection,null,null);
+//    }
 
     @Test
     public void testQuery(){
