@@ -67,7 +67,12 @@ public class CoalServlet extends BaseServlet{
         req.setAttribute("video","D:\\CoalImage\\meiliutest.mp4");
 
         //进行请求转发
-        req.getRequestDispatcher("pages/coalMine/coal.jsp").forward(req,resp);
+        req.getRequestDispatcher("/pages/coalMine/coal.jsp").forward(req,resp);
+    }
+
+    public void toBarChart(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //进行页面跳转
+        req.getRequestDispatcher("/pages/coalMine/barChart.jsp").forward(req,resp);
     }
 
 

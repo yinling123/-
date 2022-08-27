@@ -66,7 +66,7 @@ public class UserServlet extends BaseServlet {
         }else{
             //管理员密码账号不进行保存
 //            req.getSession().setAttribute("user",login.getUsername());
-            req.getRequestDispatcher("/pages/manager/manager.html").forward(req,resp);
+            req.getRequestDispatcher("/pages/manager/manager.jsp").forward(req,resp);
             return;
         }
 
@@ -82,7 +82,7 @@ public class UserServlet extends BaseServlet {
             req.getRequestDispatcher("/pages/user/login.jsp").forward(req,resp);
         }else{
             req.getSession().setAttribute("user",loginUser.getUsername());
-            req.getRequestDispatcher("/pages/coalMine/coal.jsp").forward(req,resp);
+            req.getRequestDispatcher("/pages/user/userControl.jsp").forward(req,resp);
         }
     }
 

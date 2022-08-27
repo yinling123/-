@@ -2,7 +2,7 @@
 
 body {
     overflow: hidden;
-    background-color: #e37347;
+    background-color: #1f1c1c;
 }
 
 * {
@@ -26,7 +26,8 @@ div{
 #main {
     height: 460px;
     width: 1200px;
-    border: 1px black solid;
+    border-bottom: 50px #061d4d solid;
+    background-color: #ffffff;
     overflow: auto;
 }
 
@@ -95,8 +96,7 @@ div{
 .logo_img{
     margin-left: 500px;
     width: 200px;
-    height: 82px;
-
+    height: 100px;
 }
 
 #header div a {
@@ -170,6 +170,17 @@ h1 {
     border: none;
 }
 
+.msg_cont b {
+    background: url("../img/pwd-icons-new.png") no-repeat scroll -104px -22px rgba(0, 0, 0, 0);
+    display: block;
+    height: 17px;
+    left: 10px;
+    margin-top: -8px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+}
 
 .form .itxt {
     border: 0 none;

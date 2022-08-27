@@ -2,9 +2,9 @@ package com.example.pojo;
 
 public class User {
 
-    private String username;
-    private String password;
-    private String email;
+    public String username;
+    public String password;
+    public String email;
 
     public User(String username, String password, String email) {
         this.username = username;

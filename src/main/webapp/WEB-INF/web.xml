@@ -47,4 +47,13 @@
         <servlet-name>UserFunctionServlet</servlet-name>
         <url-pattern>/UserFunctionServlet</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ManagerServlet</servlet-name>
+        <servlet-class>com.example.web.ManagerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManagerServlet</servlet-name>
+        <url-pattern>/ManagerServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

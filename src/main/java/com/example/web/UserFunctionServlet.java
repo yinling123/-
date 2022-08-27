@@ -27,4 +27,45 @@ public class UserFunctionServlet extends BaseServlet{
         req.getRequestDispatcher("/pages/coalMine/photoCheck.jsp").forward(req,resp);
     }
 
+
+    /**
+     * 进行视频检测
+     * @param req
+     * @param resp
+     */
+    public void videoChecked(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //跳转到视频检测页面
+        req.getRequestDispatcher("/pages/coalMine/coal.jsp").forward(req,resp);
+    }
+
+    /**
+     * 进行颜色修改后跳转回原页面
+     * @param req
+     * @param resp
+     */
+    public void colorSet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //跳转回原页面
+        req.getRequestDispatcher("/pages/user/userControl.jsp").forward(req,resp);
+    }
+
+    /**
+     * 用于进行账号设置
+     * @param req
+     * @param resp
+     */
+    public void accountSet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //跳转回页面
+        req.getRequestDispatcher("/pages/user/userControl.jsp").forward(req,resp);
+    }
+
+    /**
+     * 进行检测视频页面跳转回
+     * @param req
+     * @param resp
+     */
+    public void checkSet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/pages/coalMine/coal.jsp").forward(req,resp);
+    }
+
+
 }

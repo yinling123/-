@@ -3,7 +3,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>基于easydl的煤流異常檢測</title>
+  <title>基于easydl的煤流异常检测</title>
+  <base href="http://localhost:8080/demo_war_exploded/">
   <style>
     .text{
       text-anchor: middle;
@@ -180,7 +181,7 @@
       var zhutu = document.querySelector('#zhutu')
       video1.onclick = function(){
         bigvideo.innerHTML=`<video width="800px" height="350" ishivideo="true" autoplay="true" isrotate="true" autoHide="true" controls="controls">
-					<source src="mov/test.mp4" type="video/mp4">`}
+					<source src="mov/meiliutest.mp4" type="video/mp4">`}
 
     </script>
   </tr>
@@ -206,14 +207,14 @@
       <button id="bofang" onclick="bofang()" >查看</button>
       <script>
         function bofang(){
-          var video1 = document.querySelector('#video1')
-          video1.innerHTML = video1.innerHTML + `<source src="mov/test.mp4" type="video/mp4">`
-          var video2 = document.querySelector('#video2')
-          video2.innerHTML = video2.innerHTML + `<source src="mov/test.mp4" type="video/mp4">`
-          var video3 = document.querySelector('#video3')
-          video3.innerHTML = video3.innerHTML + `<source src="mov/test.mp4" type="video/mp4">`
+          // var video1 = document.querySelector('#video1')
+          // video1.innerHTML = video1.innerHTML + `<source src="mov/meiliutest.mp4" type="video/mp4">`
+          // var video2 = document.querySelector('#video2')
+          // video2.innerHTML = video2.innerHTML + `<source src="mov/test.mp4" type="video/mp4">`
+          // var video3 = document.querySelector('#video3')
+          // video3.innerHTML = video3.innerHTML + `<source src="mov/test.mp4" type="video/mp4">`
           var bigvideo1 = document.querySelector('#bigvideo1')
-          bigvideo1.innerHTML = bigvideo1.innerHTML + `<source src="mov/test.mp4" type="video/mp4">`
+          bigvideo1.innerHTML = bigvideo1.innerHTML + `<source src="mov/meiliutest.mp4" type="video/mp4">`
         }
       </script>
       <script>
@@ -275,7 +276,7 @@
         }
       </script></td>
     <td class="td" id="zhutu">
-      <a href="job1.html"><button>查看</button></a>
+      <a href="CoalServlet?action=toBarChart"><button>查看</button></a>
       </script>
       <svg width='400' height='225' >
         <g id='zuobiao'>

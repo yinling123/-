@@ -30,7 +30,7 @@ public class ManagerServlet extends BaseServlet {
         //进行存储
         req.setAttribute("userList",list);
         //进行请求转发
-        req.getRequestDispatcher("").forward(req,resp);
+        req.getRequestDispatcher("/pages/manager/userManager.jsp").forward(req,resp);
     }
 
     /**
@@ -50,11 +50,10 @@ public class ManagerServlet extends BaseServlet {
      */
     public void updateUser(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //修改用户名及其修正后的密码
-        String username = req.getParameter("username");
         String password = req.getParameter("password");
 
         //生成对应对象
-        User user = new User(username,password,null);
+        User user = new User("houyinbo",password,null);
 
         //进行数据更换
         int update = managerService.Update(user);
@@ -65,7 +64,7 @@ public class ManagerServlet extends BaseServlet {
 
         }
         //跳转回原页面
-        req.getRequestDispatcher("").forward(req,resp);
+        req.getRequestDispatcher("/pages/manager/manager.jsp").forward(req,resp);
     }
 
     /**
@@ -92,6 +91,16 @@ public class ManagerServlet extends BaseServlet {
         }
         req.getRequestDispatcher("").forward(req,resp);
     }
+
+    /**
+     * 增加用户
+     * @param req
+     * @param resp
+     */
+    public void addUser(HttpServletRequest req, HttpServletResponse resp){
+
+    }
+
 
 
 
