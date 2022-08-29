@@ -60,11 +60,12 @@ public class CoalServlet extends BaseServlet{
      */
     public void startCheckOut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //开启线程进行分帧和检测
-        ThreadPool.startFrame();
-        ThreadPool.startOne();
+//        ThreadPool.startFrame();
+//        ThreadPool.startOne();
 
         //存储生成的视频路径
         req.setAttribute("video","D:\\CoalImage\\meiliutest.mp4");
+        req.setAttribute("start",true);
 
         //进行请求转发
         req.getRequestDispatcher("/pages/coalMine/coal.jsp").forward(req,resp);

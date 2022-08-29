@@ -25,6 +25,8 @@ public class UserServlet extends BaseServlet {
     //创建UserService共有对象
     public UserService userService = new UserServiceImpl();
     public ManagerService managerService = new ManagerServiceImpl();
+    public static String nowUername;
+    public static String nowPassword;
 
 
     /**
@@ -66,6 +68,8 @@ public class UserServlet extends BaseServlet {
         }else{
             //管理员密码账号不进行保存
 //            req.getSession().setAttribute("user",login.getUsername());
+            nowUername = username;
+            nowPassword = password;
             req.getRequestDispatcher("/pages/manager/manager.jsp").forward(req,resp);
             return;
         }
@@ -81,6 +85,9 @@ public class UserServlet extends BaseServlet {
             req.setAttribute("passsword",password);
             req.getRequestDispatcher("/pages/user/login.jsp").forward(req,resp);
         }else{
+            //进行存储当前用户名
+            nowUername = username;
+            nowPassword = password;
             req.getSession().setAttribute("user",loginUser.getUsername());
             req.getRequestDispatcher("/pages/user/userControl.jsp").forward(req,resp);
         }

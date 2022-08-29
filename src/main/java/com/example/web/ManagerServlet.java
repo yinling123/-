@@ -14,6 +14,7 @@ import java.util.List;
 /**
  * 针对管理员页面的servlet程序
  */
+@SuppressWarnings("all")
 public class ManagerServlet extends BaseServlet {
 
     //创建共有对象
@@ -50,7 +51,8 @@ public class ManagerServlet extends BaseServlet {
      */
     public void updateUser(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //修改用户名及其修正后的密码
-        String password = req.getParameter("password");
+        String password = req.getParameter("newPassword");
+        System.out.println(password + "dsds");
 
         //生成对应对象
         User user = new User("houyinbo",password,null);
@@ -59,7 +61,7 @@ public class ManagerServlet extends BaseServlet {
         int update = managerService.Update(user);
 
         if(update > 0){
-
+            System.out.println("修改成功");
         }else{
 
         }
@@ -73,23 +75,51 @@ public class ManagerServlet extends BaseServlet {
      * @param resp
      */
     public void updateManager(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //获取用户名和密码
-        String username = req.getParameter("username");
-        String password = req.getParameter("password");
+        //获取密码
+        String oldPassword = req.getParameter("oldPassword");
+        String newPassword = req.getParameter("newPassword");
+        String pwd = req.getParameter("pwd");
 
+        System.out.println(pwd);
+
+        //进行存储
+        req.setAttribute("oldPassword",oldPassword);
+        req.setAttribute("newPassword",newPassword);
+        req.setAttribute("pwd",pwd);
+
+        //判断原密码错误
+        if(oldPassword == null || newPassword == null){
+            req.setAttribute("msg",null);
+            req.getRequestDispatcher("/pages/manager/passwordUpdate.jsp").forward(req,resp);
+            return;
+        }
+        else if(oldPassword.equals("houyinbo") == false){
+            req.setAttribute("msg","原密码错误");
+            req.getRequestDispatcher("/pages/manager/passwordUpdate.jsp").forward(req,resp);
+            return;
+        }else if(newPassword.equals(pwd) == false){
+            //判断新密码是否相等
+            req.setAttribute("msg","新密码与确认密码不相同");
+            req.getRequestDispatcher("/pages/manager/passwordUpdate.jsp").forward(req,resp);
+            return;
+        }
         //生成对应的对象
-        Manager manager = new Manager(username, password, null);
+        Manager manager = new Manager("houyinbo",newPassword,null);
 
         //进行数据更新
         int update = managerService.update(manager);
 
         //进行判断
         if(update > 0){
-
+            System.out.println("修改成功");
+            req.setAttribute("data",0);
+            req.getRequestDispatcher("/pages/manager/passwordUpdate.jsp").forward(req,resp);
+            return;
         }else{
-
+            req.setAttribute("data",1);
+            req.getRequestDispatcher("/pages/manager/passwordUpdate.jsp").forward(req,resp);
         }
-        req.getRequestDispatcher("").forward(req,resp);
+//        req.getRequestDispatcher("/pages/manager/manager.jsp").forward(req,resp);
     }
 
     /**

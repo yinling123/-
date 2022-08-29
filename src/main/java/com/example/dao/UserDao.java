@@ -50,7 +50,7 @@ public interface UserDao {
      * @param username
      * @return
      */
-    public User queryUser(Connection connection,String username);
+    public User queryUser(Connection connection,String username,String password);
 
 
 }

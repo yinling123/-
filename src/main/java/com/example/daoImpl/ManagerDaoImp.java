@@ -52,7 +52,7 @@ public class ManagerDaoImp extends BaseDao implements ManagerDao{
 
     @Override
     public int updateManagerPassword(Connection connection, Manager manager) {
-        String sql = "update users set password = ? where username = ?";
+        String sql = "update managers set password = ? where username = ?";
         return update(connection,sql,manager.getPassword(),manager.getUsername());
     }
 

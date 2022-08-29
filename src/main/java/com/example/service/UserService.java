@@ -9,6 +9,13 @@ import com.example.pojo.User;
 public interface UserService {
 
     /**
+     * 修改用户信息
+     * @param user
+     * @return 返回值为0时表示修改失败
+     */
+    public int Update(User user);
+
+    /**
      * 进行用户注册
      * @param user
      */
