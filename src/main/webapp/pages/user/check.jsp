@@ -9,11 +9,12 @@
   <base href="http://localhost:8080/demo_war_exploded/">
   <style>
     body{
-      background-color: black;
+      background-image: url("static/img/lankj2.png");
+      background-repeat: no-repeat;
     }
     .div1{
       height: 600px;
-      background-color: #b1b2a9;
+      background-color: rgba(119, 118, 118, 0.8);
       border-radius: 30px;
       position: fixed;
       top: 50px;
@@ -25,7 +26,6 @@
     }
     .box5{
       height: 90px;
-
     }
     .box4{
       width: 600px;
@@ -68,20 +68,36 @@
     .bt1{
       position: fixed;
       right: 730px;
-      width: 25px;
+      width: 50px;
       height: 25px;
+      font-size: 20px;
+      line-height: 20px;
+      background-color: rgba(140, 139, 139, 0);
+      color: #b0b0b2;
+      border: 3px solid #b0b0b2;
+      border-radius: 5px;
     }
     .bt2{
       position: fixed;
-      right: 670px;
-      width: 25px;
+      right: 650px;
+      width: 50px;
       height: 25px;
+      font-size: 20px;
+      line-height: 20px;
+      background-color: rgba(119, 118, 118, 0) ;
+      color: #b0b0b2;
+      border: 3px solid #b0b0b2;
+      border-radius: 5px;
     }
     .txt{
       position: fixed;
       right: 695px;
       width: 25px;
       height: 25px;
+      font-size: 25px;
+      background-color: rgba(119, 118, 118, 0) ;
+      color: #b0b0b2;
+      border: none;
     }
     .tj{
       width: 100%;
@@ -104,9 +120,9 @@
     <span>实时检测</span>
     <div class = "box4">
       <span>设备数量:</span>
-      <button class="bt1" onclick="add()">+</button>
+      <button class="bt1" onclick="add()"><</button>
       <input class="txt" type="text" value="0"/>
-      <button class="bt2">-</button>
+      <button class="bt2">></button>
     </div>
     <script>
       function add (){

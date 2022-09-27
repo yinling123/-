@@ -20,6 +20,12 @@
         });
 
     </script>
+    <style>
+        body{
+            background-image: url("static/img/landl2.png");
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
@@ -56,7 +62,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="pages/manager/userEdit.jsp?method=add&pageNo=${requestScope.page.pageTotal}">添加图书</a></td>
+            <td><a href="pages/manager/userEdit.jsp?method=add&pageNo=${requestScope.page.pageTotal}">添加用户</a></td>
         </tr>
     </table>
 </div>

@@ -8,37 +8,58 @@
   <title>Document</title>
   <base href="http://localhost:8080/demo_war_exploded/">
   <style>
+    body{
+      background-image: url("static/img/landl2.png");
+      /*background-color: black;*/
+    }
     table{
-      width: 500px;
+      width: 800px;
       margin: 100px auto;
+      font-size: 20px;
       border-collapse: collapse;
       text-align: center;
     }
-    td,
-    th{
-      boder: 1px solid #333;
-    }
     thead tr{
       height: 40px;
-      background-color: #ccc;
+      width: 800px;
+      background-color: #9b9b9b;
+    }
+    thead{
+      background-color: #cccccc;
+    }
+    .box1{
+      width: 800px;
+      height: 600px;
+      margin: auto;
+      border-radius: 10px;
+      background-color: rgba(204, 204, 204, 0.8);
+    }
+    #lef{
+      border-radius: 10px 0px 0px 0px;
+    }
+    #rig{
+      border-radius: 0px 10px 0px 0px;
     }
   </style>
 </head>
 <body>
-<table cellspacing='0'>
-  <thead>
-  <tr>
-    <th>区域</th>
-    <th>时间</th>
-    <th>次序</th>
-    <th>宽度</th>
-    <th>类型</th>
-    <th>长度</th>
-  </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
+<div class = "box1">
+  <table cellspacing='0'>
+    <thead>
+    <tr>
+      <th id = "lef">区域</th>
+      <th>时间</th>
+      <th>次序</th>
+      <th>宽度</th>
+      <th>类型</th>
+      <th id = "rig">长度</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+
 <script>
 
   Date.prototype.format =function(format)
@@ -83,7 +104,7 @@
   var datas = null;
   datas = ${requestScope.string};
   // console.log(datas)
-          // [
+  // [
   //   {
   //     name:'ljz',
   //     age:'11'

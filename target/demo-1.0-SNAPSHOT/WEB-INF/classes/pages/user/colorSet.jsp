@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <base href="http://localhost:8080/demo_war_exploded/">
-+
     <style>
         body{
-            background-color: black;
+            background-image: url("static/img/lankj2.png");
+            /*background-color: black;*/
         }
         .div1{
             height: 600px;

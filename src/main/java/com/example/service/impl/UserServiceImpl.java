@@ -56,9 +56,9 @@ public class UserServiceImpl implements UserService {
         //获取连接
         Connection connection = DruidUtils.getConnection();
         //调用数据库方法进行查询
-        final List<User> list = userDao.queryUsers(connection, username);
+        final User user = userDao.query1(connection, username);
         //进行对应的判断
-        if(list == null){
+        if(user == null){
             return false;
         }
         return true;

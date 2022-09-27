@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>后台管理</title>
     <base href="http://localhost:8080/demo_war_exploded/">
-    <link type="text/css" rel="stylesheet" href="static/css/style.css">
+    <link type="text/css" rel="stylesheet" href="static/css/style2.css">
     <script type="text/javascript" src="static/script/jquery-1.7.2.js"></script>
     <style type="text/css">
         h1 {
@@ -17,9 +17,8 @@
 <body>
 
 <div id="header">
-    <img class="logo_img" alt="" src="static/img/logo.png">
     <span class="wel_word">后台管理系统</span>
-    <div>
+    <div class = "lianjie">
         <a href="ManagerServlet?action=getUsersList">用户管理</a>
         <a href="pages/manager/userDailyManager.jsp">监控管理</a>
         <a href="pages/manager/passwordUpdate.jsp">修改密码</a>

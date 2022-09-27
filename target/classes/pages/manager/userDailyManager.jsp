@@ -5,42 +5,59 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>检测记录</title>
+  <base href="http://localhost:8080/demo_war_exploded/">
   <style>
     body{
-      background-color: black;
+      background-image: url("static/img/landl2.png");
       text-align: center;
     }
     .div{
-      float: right;
+      display: inline-block;
+      margin-left: 30px;
       width: 200px;
       height: 50px;
       background-color: antiquewhite;
+      color: #0a475b;
+      border-radius: 10px 0px 0px 0px;
       font-size: 30px;
       font-weight: 600;
     }
 
     .div1{
-      float: right;
+      display:inline-block;
       width: 1300px;
-      height: 700px;
-      background-color: white;
+      height: 600px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 0px 20px 20px 20px;
       overflow: visible;
       max-height: none;
     }
     .div2{
       /*height: -300px;*/
-      float: right;
+      display: inline-block;
       width: 200px;
       height: 50px;
+      border-radius: 0px 10px 0px 0px ;
+      color:  #0a475b;
       background-color: white;
       font-size: 30px;
       font-weight: 600;
+    }
+    .qieh{
+      margin-top: 30px;
+      width: 600px;
+      height: 50px;
     }
     /*}*/
   </style>
 </head>
 <body>
+<div class = "qieh">
+  <div class="div" onclick="tj()"><text>日志</text></div>
+<%--  <div class="div2"><text>用户</text></div>--%>
+</div>
+
 <div class="div1">
   <style>
     table{
@@ -64,7 +81,6 @@
       <th>用户名</th>
       <th>设备数量</th>
       <th>使用时间</th>
-      <th>属性四</th>
     </tr>
     </thead>
     <tbody>
@@ -73,16 +89,29 @@
   <script>
     var datas = [
       {
-        name:'ljz',
-        age:'11'
+        name:'12323',
+        age:'2',
+        date:'2022-08-18 13:28:39'
       },
       {
-        name:'wlh',
-        age:'12'
+        name:'333232',
+        age:'1',
+        date:'2022-08-18 16:21:26'
+      },
+      {
+        name:'ljz',
+        age:'2',
+        date:'2022-08-18 13:28:39'
       },
       {
         name:'sss',
-        age:'55'
+        age:'1',
+        date:'2022-08-18 16:21:26'
+      },
+      {
+        name:'1234567',
+        age:'1',
+        date:'2022-08-23 10:29:35'
       }
     ];
     var tbody = document.querySelector('tbody');
@@ -98,8 +127,7 @@
 
   </script>
 </div>
-<div class="div" onclick="tj()"><text>日志</text></div>
-<div class="div2"><text>用户</text></div>
+
 <script>
   function changeColor1(color) {
     d1.style.cssText = "background-color:" + color;
@@ -136,7 +164,6 @@
 						<th>用户名</th>
 						<th>设备数量</th>
 						<th>使用时间</th>
-						<th>属性四</th>
 					</tr>
 				</thead>
 				<tbody>

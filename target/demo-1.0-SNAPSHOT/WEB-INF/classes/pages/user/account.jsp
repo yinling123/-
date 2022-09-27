@@ -12,7 +12,7 @@
             background-image: url("static/img/lankj2.png");
         }
         .div1{
-            height: 600px;
+            height: 650px;
             background-color: rgba(119, 118, 118, 0.8);
             border-radius: 30px;
             position: fixed;
@@ -98,7 +98,9 @@
         .tj{
             width: 100%;
             height: 100%;
-
+            font-size: 20px;
+            border-radius: 5px;
+            border: none;
         }
         .tb{
             margin-top: 12px;
@@ -110,8 +112,36 @@
             width: 100px;
             height: 50px;
             border-radius: 5px;
+            margin-top: 20px;
+            margin-left: 298px;
+        }
+        .zhezhao{
             position: fixed;
-            top:580px
+            left: 0px;
+            top: 0px;
+            background: #000;
+            width: 100%;
+            height: 100%;
+            opacity: 0.9;
+            display: none;
+        }
+        .zhezhao1{
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            background: #000;
+            width: 100%;
+            height: 100%;
+            opacity: 0.9;
+            display: none;
+        }
+        .tankuang{
+            position: relative;
+            background: #fff;
+            width: 40%;
+            height: 20%;
+            border-radius: 5px;
+            margin: 5% auto;
         }
     </style>
 </head>
@@ -130,11 +160,15 @@
                 <span>单位:</span>
                 <input type="text" class = "shur2" value="煤流监控科"/>
             </div>
-
-            <%--      <div class = "box1">--%>
-            <%--        <span>账号:</span>--%>
-            <%--        <input type="text" class = "shur2" value=""/>--%>
-            <%--      </div>--%>
+<%--            <!--            我这边直接运行会显示旁边的符号先注释掉qwq-->--%>
+<%--            <!--            <%&#45;&#45;      <div class = "box1">&#45;&#45;%>-->--%>
+<%--            <!--            <%&#45;&#45;        <span>账号:</span>&#45;&#45;%>-->--%>
+<%--            <!--            <%&#45;&#45;        <input type="text" class = "shur2" value=""/>&#45;&#45;%>-->--%>
+<%--            <!--            <%&#45;&#45;      </div>&#45;&#45;%>-->--%>
+<%--            <div class = "box1">--%>
+<%--                <span>账号:</span>--%>
+<%--                <input type="text" class = "shur2" value=""/>--%>
+<%--            </div>--%>
 
             <div class = "box1">
                 <span>邮箱:</span>
@@ -142,7 +176,7 @@
             </div>
 
             <div class = "box1">
-                <span>地址</span>
+                <span>地址:</span>
                 <input type="text" class = "shur2" value="永平路220号"/>
             </div>
 
@@ -150,80 +184,81 @@
         </div>
     </form>
 
-    <span>修改密码</span>
+
     <span class="errorMsg">
         ${requestScope.msg}
     </span>
     <form action="UserFunctionServlet" method="post">
         <input type="hidden" name="action" value="accountSet">
         <div class = "box3">
+            <span>修改密码</span>
             <div class = "box4">
-                <span>旧密码:</span>
-                <span>旧的密码</span>
-                <input class="text" type="password" placeholder="请输入原密码"
+                <span>旧的密码:</span>
+                <input class="shur" type="text" placeholder="请输入原密码"
                        autocomplete="off" tabindex="1" name="oldPassword" id="oldPassword"
                        value="${requestScope.oldPassword}"/>
-                <div class = "box4">
-                    <span>新密码:</span>
-                    <input class="text" type="password" placeholder="请输入原密码"
-                           autocomplete="off" tabindex="1" name="newPassword" id="newPassword"
-                           value="${requestScope.newPassword}"/>
-                </div>
-                <div class = "box4">
-                    <span>确认密码:</span>
-                    <input class="text" type="password" placeholder="请输入原密码"
-                           autocomplete="off" tabindex="1" name="pwd" id="pwd"
-                           value="${requestScope.pwd}"/>
-                </div>
-                <div class="tja" style="right: 700px;">
-                    <input type="submit" value="提交" class="tj">
-                </div>
+            </div>
+            <div class = "box4">
+                <span>新的密码:</span>
+                <input class="shur" type="password" placeholder="请输入原密码"
+                       autocomplete="off" tabindex="1" name="newPassword" id="newPassword"
+                       value="${requestScope.newPassword}"/>
+            </div>
+            <div class = "box4">
+                <span>确认密码:</span>
+                <input class="shur" type="password" placeholder="请输入原密码"
+                       autocomplete="off" tabindex="1" name="pwd" id="pwd"
+                       value="${requestScope.pwd}"/>
+            </div>
+            <div class="tja" style="right: 700px;">
+                <input type="submit" value="提交" class="tj">
             </div>
         </div>
-    </form>
 
-    <div class="zhezhao" id='zhezhao'>
-        <div class="tankuang">
-            <div id="header">
-                <div id="header-right">
-                    <div><text class="txt">修改成功,请重新登录</text></div>
-                    <button onclick="jump('pages/user/login.jsp')">确定</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="zhezhao1" id='zhezhao1'>
-        <div class="tankuang">
-            <div id="header">
-                <div id="header-right">
-                    <div><text class="txt">修改失败</text></div>
-                    <button onclick="jump('pages/user/userControl.jsp')">确定</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript">
-        document.getElementById('zhezhao').style.display="none";
-        document.getElementById('zhezhao1').style.display="none";
-        {
-            data="${requestScope.data}";
-            if(data==0){
-                document.getElementById('zhezhao').style.display="";
-                ${requestScope.data = null};
-            }
-            if(data==1){
-                document.getElementById('zhezhao1').style.display="";
-                ${requestScope.data = null};
-            }
-        }
-        function hidder(){
-            document.getElementById('zhezhao').style.display="none";
-        }
-        function hidder1(){
-            document.getElementById('zhezhao1').style.display="none";
-        }
-    </script>
+    </form>
 </div>
+<div class="zhezhao" id='zhezhao'>
+    <div class="tankuang">
+        <div id="header">
+            <div id="header-right">
+                <div><text class="txt">修改成功,请重新登录</text></div>
+                <button onclick="jump('pages/user/login.jsp')">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="zhezhao1" id='zhezhao1'>
+    <div class="tankuang">
+        <div id="header">
+            <div id="header-right">
+                <div><text class="txt">修改失败</text></div>
+                <button onclick="jump('pages/user/userControl.jsp')">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    document.getElementById('zhezhao').style.display="none";
+    document.getElementById('zhezhao1').style.display="none";
+    {
+        data="${requestScope.data}";
+        if(data==0){
+            document.getElementById('zhezhao').style.display="";
+            ${requestScope.data = null};
+        }
+        if(data==1){
+            document.getElementById('zhezhao1').style.display="";
+            ${requestScope.data = null};
+        }
+    }
+    function hidder(){
+        document.getElementById('zhezhao').style.display="none";
+    }
+    function hidder1(){
+        document.getElementById('zhezhao1').style.display="none";
+    }
+</script>
+
 
 <script>
     // var img = document.querySelector('.div1')

@@ -53,4 +53,6 @@ public interface UserDao {
     public User queryUser(Connection connection,String username,String password);
 
 
+
+    public User query1(Connection connection, String username);
 }

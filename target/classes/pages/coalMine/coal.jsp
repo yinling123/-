@@ -263,14 +263,14 @@
         <div class = "huan">
           <svg id="tu" height='200' width='220'>
             <circle cx='100' cy='100' r='70' fill='none' stroke='grey' stroke-width='40' stroke-linecap='round'/>
-            <circle class='progress' transform='rotate(-90, 125, 125)' cx='125' cy='125' r='90' fill='none' stroke='red' stroke-width='40' stroke-linecap='round' stroke-dasharray='0, 10000' />
-            <text class='text' x='125' y='125' font-size='60' fill='red'>0%</text>
+            <circle class='progress' transform='rotate(-104, 125, 125)' cx='125' cy='125' r='98' fill='none' stroke='red' stroke-width='40' stroke-linecap='round' stroke-dasharray='0, 10000' />
+            <text class='text' x='60' y='125' font-size='60' fill='red'>0%</text>
           </svg>
         </div>
 
         <div class = "huanx">
-<%--          <button id="jiance" onclick="upload()" >检测</button>--%>
-<%--          <button id="bofang" onclick="bofang()" >查看</button>--%>
+          <%--          <button id="jiance" onclick="upload()" >检测</button>--%>
+          <%--          <button id="bofang" onclick="bofang()" >查看</button>--%>
         </div>
       </div>
 

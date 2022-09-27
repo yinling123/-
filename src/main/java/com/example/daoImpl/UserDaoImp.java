@@ -43,5 +43,11 @@ public class UserDaoImp extends BaseDao implements UserDao {
         return queryOne(connection,User.class,sql,username,password);
     }
 
+    @Override
+    public User query1(Connection connection, String username) {
+        String sql = "select * from users where username = ?";
+        return queryOne(connection,User.class,sql,username);
+    }
+
 
 }
